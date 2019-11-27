@@ -1,0 +1,49 @@
+%flex-column { 
+    display: flex;
+    flex-direction: column;
+}
+%flex-row { 
+    display: flex;
+    flex-direction: row;
+}
+
+%w100p { 
+    width: 100%;
+}
+%border-outline { 
+    border:none;
+    outline: none;
+}
+
+%form { 
+    div {
+        width: 90%;
+        height: 3rem;
+        background: $bg-white;
+        border-radius: 50px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        input {
+            @extend %border-outline;
+            border-radius: 50px;
+        }
+
+        button {
+            background: $origin-orange;
+            color: $bg-white;
+            @extend %border-outline;
+            padding: 0 25px;
+            border-radius: 50px;
+            position: absolute;
+            right: -1px;
+            height: 100%;
+            transition: 300ms ease;
+
+            &:hover {
+                background: darken(desaturate($origin-orange, 30%), 20%);
+            }
+        }
+    }
+}

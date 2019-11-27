@@ -1,0 +1,72 @@
+.team {
+    background: $bg-white;
+    z-index: 1;
+
+    .team-conteiner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .team-head {
+            margin: 100px 300px;
+            text-align: center;
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 100;
+                color: $bg-dark;
+            }
+
+            h2 {
+                font-size: 0.8rem;
+                color: lighten($bg-dark, 25%);
+                font-weight: 100;
+                line-height: 2;
+            }
+        }
+
+        .team-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .team-content-item {
+                width: 30%;
+
+                img {
+                    max-width: 100%;
+                }
+
+                div {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 0;
+
+                    h1 {
+                        color: $bg-dark;
+                    }
+                    i { 
+                        font-size: 2rem;
+                        color: rgb(92, 67, 255);
+                        transition: 300ms ease;
+                        &:hover{  color: rgb(175, 166, 233);}
+                    }
+                }
+                h2 { 
+                    color: $origin-orange;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    transform: translateY(-20px);
+                }
+
+                p { 
+                    font-size: 0.8rem;
+                    line-height: 1.8;
+                    color: lighten($bg-dark, 25%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.stay-conteiner { 
+    background-image: linear-gradient(to top, rgb(218, 194, 194) , #fff);
+    width: 100%;
+    
+  
+}
+.stay-content { 
+    margin: 100px auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    span { 
+        width: 5px;
+        height: 5px;
+        border: #dac2c2 solid 2px;
+        border-radius: 100%;
+        position: relative;
+        &::before { 
+            content: '';
+            width: 2px;
+            height: 60px;
+            background-image: linear-gradient(to top, #dac2c2, #fff);
+            display: block; 
+            position: absolute;
+            top: -60px;
+            left: calc( 50% - 1px );
+
+        }
+    }
+
+    h1 { font-size: 2.5rem; font-weight: 100; color: $bg-dark;}
+    p {  font-size: 1.35rem; font-weight: 100; color: lighten($bg-dark, 25%); margin: 20px 0 40px 0}
+    form {  width: 100% ; @extend %form; 
+    > div { margin: 0 auto;}
+}
+}

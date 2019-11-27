@@ -1,0 +1,417 @@
+@import "vars";
+@import "extend";
+@import "features";
+@import "specifications";
+@import "team";
+@import "stay";
+
+
+body {
+    background: $bg-white;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    font-size: $f-size;
+    display: flex;
+    flex-direction: column;
+
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.conteiner {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    @extend %flex-column;
+
+    .row-top {
+        width: 100%;
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+            a {
+                img {
+                    height: 30px;
+                }
+            }
+        }
+
+        .right {
+            ul {
+                display: flex;
+
+                li {
+                    padding: 0.5rem;
+                    box-sizing: border-box;
+
+                    a {
+                        padding: 0.3rem;
+                        box-sizing: border-box;
+                        color: $bg-dark;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        transition: 300ms ease;
+
+                        &:hover {
+                            color: lighten($bg-dark, 30%)
+                        }
+                    }
+
+                    &:last-child {
+                        background: $origin-orange;
+                        border-radius: 30px;
+                        margin-left: 10px;
+                        transition: 300ms ease;
+
+                        &:hover {
+                            background: darken(desaturate($origin-orange, 30%), 20%);
+                        }
+
+                        a {
+                            color: $bg-white;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .row-mid {
+        width: 100%;
+        height: 85%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .left-mid {
+            width: 40%;
+            height: 600px;
+            color: $bg-white;
+
+            h1 {
+                font-size: 4rem;
+                font-weight: 100;
+                font-stretch: ultra-expanded;
+            }
+
+            h2 {
+                font-weight: 200;
+                font-size: 1rem;
+                width: 75%;
+            }
+
+            p {
+                margin: 40px 0;
+
+                img {
+                    height: 1rem;
+                }
+
+                span {
+                    color: $origin-orange;
+                    font-weight: 700;
+                }
+            }
+
+            form {
+                @extend %form;
+            }
+
+            .jump {
+                margin: 80px 20px;
+                width: 6px;
+                height: 6px;
+                border: darken($bg-white, 30%) 2px solid;
+                border-radius: 100%;
+                position: relative;
+                animation: jump-div alternate infinite 800ms ease-out;
+                transition: 300ms ease;
+
+                @keyframes jump-div {
+                    100% {
+                        transform: translateY(40px);
+                    }
+
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -40px;
+                    left: calc(50% - 1px);
+                    display: block;
+                    height: 40px;
+                    width: 2px;
+                    background-image: linear-gradient(to bottom, $bg-dark, darken($bg-white, 30%))
+                }
+            }
+
+        }
+
+        .right-mid {
+
+            width: 50%;
+            height: 600px;
+            background-image: url('../kaya/render-kaya-hero.jpeg');
+            background-position: center;
+            background-size: cover;
+            position: relative;
+
+            &:first-child {
+                position: absolute;
+                right: 50px;
+                top: 40px;
+            }
+
+            div {
+                &:first-child {
+                    position: absolute;
+                    right: 60px;
+                    top: 40px;
+                }
+
+                &:last-child {
+                    position: absolute;
+                    left: 40px;
+                    bottom: 60px;
+                }
+
+                &:nth-child(2) {
+                    position: absolute;
+                    left: -60px;
+                    top: 200px;
+                }
+
+                position: absolute;
+
+                padding: 16px 24px;
+                background: $bg-white;
+                border-radius: 40px;
+                font-size: 1.2rem;
+                color: rgb(163, 163, 163);
+
+                b {
+                    font-weight: 600;
+                    color: darken(desaturate($origin-orange, 40%), 15%);
+                }
+            }
+
+        }
+    }
+}
+
+header {
+    width: 100%;
+    height: 850px;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 55%;
+        height: 850px;
+        background: $bg-dark;
+        z-index: -1;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45%;
+        height: 850px;
+        background: $bg-pink;
+        z-index: -1;
+    }
+}
+
+
+.left {
+    color: $bg-grey;
+
+}
+
+.right {
+
+    color: $bg-dark;
+}
+
+
+
+
+
+// Saction meet
+.meet-conteiner {
+    height: 1000px;
+    background: $bg-white;
+
+    .meet-content {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+
+                    h1 {
+                        font-size: 3rem;
+                        font-weight: 100;
+                        color: $bg-dark;
+                    }
+
+                    ul {
+
+                        li {
+                            display: inline-block;
+                            padding: 20px;
+                            position: relative;
+
+                            &:first-child {
+                                a {
+                                    color: $origin-orange;
+
+                                }
+
+                                &::after {
+                                    display: block;
+                                    content: '';
+                                    width: calc(100% - 40px);
+                                    height: 3px;
+                                    border-radius: 2px;
+                                    background: $origin-orange;
+                                    position: absolute;
+                                    bottom: 0px;
+                                }
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: darken($bg-grey, 30%);
+                                font-size: 1.1rem;
+
+                            }
+
+                        }
+                    }
+                
+                    }
+
+     .meet-content-img { 
+        z-index: 133;
+        width: 100%;
+       
+        height: 100%;
+        background-image: url(../kaya/all-kaya-black.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .meet-content-text { 
+        display: flex;
+        margin: 80px 0;
+        color: lighten($bg-dark, 10%);
+        .meet-content-text-s{ 
+            
+            p{
+                padding: 10px;
+                box-sizing: border-box;
+            &:first-child{ font-size: 1.5rem; font-weight: 300;}
+            &::last-child{ font-size: 1rem; font-weight: 300;}
+            }
+        }
+        .meet-content-text-m{ 
+            p{
+                padding: 10px;
+                box-sizing: border-box;
+            &:first-child{ font-size: 1.5rem; font-weight: 300;}
+            &::last-child{ font-size: 1rem; font-weight: 300;}
+            }
+        }
+        .meet-content-text-l{ 
+            p{
+                padding: 10px;
+                box-sizing: border-box;
+            &:first-child{ font-size: 1.5rem; font-weight: 300;}
+            &::last-child{ font-size: 1rem; font-weight: 300;}
+            }
+        }
+       
+
+    
+    }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-input-placeholder {
+    padding-left: 15px;
+}
+
+:placeholder-shown {
+    padding-left: 15px;
+}
+
+:-moz-placeholder {
+    padding-left: 15px;
+}
+
+::-moz-placeholder {
+    padding-left: 15px;
+}
+
+:-ms-input-placeholder {
+    padding-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+// @each $suf, $color in $colors {
+
+//     .bg-#{$suf} {
+//         background-color: $color;
+//     }
+//     .text-#{$suf} {
+//         color: $color;
+//     }
+//     .alert-#{$suf} {
+//         background-color: lighten($color, 30%);
+//         color: darken(desaturate($color, 15%), 15%);
+//     }
+// }
